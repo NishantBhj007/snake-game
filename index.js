@@ -3,7 +3,7 @@ let inputdir={x:0,y:0}
 const foodsound=new Audio('ding.mp3')
 const gameover=new Audio('gameo.mp3')
 const movesound=new Audio('move.mp3')
-const music=new Audio('gamem.mp3')
+const music=new Audio('gamem.mp3.mp3')
 
 let speed=10;
 let lastpainttime=0;
