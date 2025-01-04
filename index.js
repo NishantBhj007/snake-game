@@ -1,6 +1,6 @@
 let inputdir={x:0,y:0}
 
-const foodsound=new Audio('ding.mp3')
+const foodsound=new Audio('https://github.com/NishantBhj007/snake-game/raw/refs/heads/main/ding.mp3')
 const gameover=new Audio('gameo.mp3')
 const movesound=new Audio('move.mp3')
 const music=new Audio('gamem.mp3.mp3')
