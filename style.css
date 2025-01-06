@@ -1,71 +1,67 @@
-*{
- padding: 0;
- margin: 0;
+* {
+    padding: 0;
+    margin: 0;
 }
 
-.body{
- background:url('snake.jpg');
- min-height: 100vh;
- background-size: 100vw 100vh;
- display: flex;
- justify-content: center;
- align-items: center;
+.body {
+    background: url('./image-assets/backGroundImage.jpg');
+    min-height: 100vh;
+    background-size: 100vw 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#board{
-
- background: linear-gradient(rgb(156, 244, 156),rgb(239, 239, 141));
- width: 78vmin;
- height: 90vmin;
- border: 2px solid black;
- display: grid;
- grid-template-columns: repeat(18,1fr);
- grid-template-rows: repeat(18,1fr);
-
-}
-.head{
- background:linear-gradient(red,yellow);
- border: 2px solid grey;
- transform: scale(1.02);
- border-radius: 9px;
-
+#board {
+    background: linear-gradient(rgb(156, 244, 156), rgb(239, 239, 141));
+    width: 78vmin;
+    height: 90vmin;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(18, 1fr);
 }
 
-.food{
- background:linear-gradient(red,blue);
- border-radius: 12px;
+.head {
+    background: linear-gradient(red, yellow);
+    border: 2px solid grey;
+    transform: scale(1.02);
+    border-radius: 9px;
 }
 
-.snake{
- background-color: red;
- border: .25vmin solid white;
-border-radius: 12px;
-
-}
-#scorebox{
- position: absolute;
- top: 9px;
- right: 143px;
- font-size: 39px;
- font-family: Georgia;
+.food {
+    background: linear-gradient(red, blue);
+    border-radius: 12px;
 }
 
-#Highscorebox{
- position: absolute;
- top: 52px;
- right: 86px;
- font-size: 39px;
- font-family: Georgia;
+.snake {
+    background-color: red;
+    border: 0.25vmin solid white;
+    border-radius: 12px;
 }
-#bt{
 
- position: absolute;
- top: 140px;
- right: 162px;
- font-size: 39px;
- font-family: Georgia;
- position: absolute;
- border-radius:12px;
- background-color: lightgoldenrodyellow;
- 
+#scorebox {
+    position: absolute;
+    top: 9px;
+    right: 143px;
+    font-size: 39px;
+    font-family: Georgia, serif;
+}
+
+#Highscorebox {
+    position: absolute;
+    top: 52px;
+    right: 86px;
+    font-size: 39px;
+    font-family: Georgia, serif;
+}
+
+#bt {
+    position: absolute;
+    top: 140px;
+    right: 162px;
+    font-size: 39px;
+    font-family: Georgia, serif;
+    border-radius: 12px;
+    background-color: lightgoldenrodyellow;
 }
