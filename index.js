@@ -1,12 +1,8 @@
 import { gameEngine } from './scripts/gameEngine.js';
-import { MOVE_ACTION_SOUND } from './scripts/consts.js';
-
-const gameState = {
-    inputDir: { x: 0, y: 0 },
-    hiscore: 0,
-    speed: 10,
-    lastPaintTime: 0,
-};
+import { gameState } from './scripts/gameState.js';
+import { initializeHighscore } from './scripts/highScore.js';
+import { setupInputHandler } from './scripts/inputHandler.js';
+import { setupRestartButton } from './scripts/uiUtils.js';
 
 // Game Functions
 function main(ctime) {
@@ -15,48 +11,11 @@ function main(ctime) {
         return;
     }
     gameState.lastPaintTime = ctime;
-    gameEngine(gameState);
+    gameEngine();
 }
 
 // Main Logic
-let highscore = localStorage.getItem('highscore');
-gameState.hiscore = highscore === null ? 0 : JSON.parse(highscore);
-if (highscore === null) {
-    localStorage.setItem('highscore', JSON.stringify(gameState.hiscore));
-} else {
-    document.querySelector('#Highscorebox').innerHTML = `HighScore: ${gameState.hiscore}`;
-}
-
+initializeHighscore();
+setupInputHandler();
+setupRestartButton();
 window.requestAnimationFrame(main);
-window.addEventListener('keydown', (e) => {
-    gameState.inputDir.x = 0; // Reset inputDir
-    gameState.inputDir.y = 0;
-    MOVE_ACTION_SOUND.play();
-    GAME_OVER_SOUND.pause();
-
-    switch (e.key) {
-        case "ArrowUp":
-            gameState.inputDir.x = 0;
-            gameState.inputDir.y = -1;
-            break;
-        case "ArrowDown":
-            gameState.inputDir.x = 0;
-            gameState.inputDir.y = 1;
-            break;
-        case "ArrowLeft":
-            gameState.inputDir.x = -1;
-            gameState.inputDir.y = 0;
-            break;
-        case "ArrowRight":
-            gameState.inputDir.x = 1;
-            gameState.inputDir.y = 0;
-            break;
-        default:
-            break;
-    }
-});
-
-// Restart button functionality
-document.querySelector('#bt').addEventListener('click', () => {
-    location.reload();
-});
