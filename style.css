@@ -152,7 +152,9 @@
     margin-top: -1px;
   }
 }
-
+#size {
+  font-size: 32px;
+}
 .arrow {
   display: grid;
   grid-template-columns: 30px 30px 30px; /* Create 3 columns for left, center, and right */
