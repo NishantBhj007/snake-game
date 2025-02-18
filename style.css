@@ -1,67 +1,204 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .game-container {
-    background: url('./image-assets/backGroundImage.jpg');
-    min-height: 100vh;
-    background-size: 100vw 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: url("./image-assets/backGroundImage.jpg");
+  min-height: 100vh;
+  background-size: 100vw 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #game-board {
-    background: linear-gradient(rgb(156, 244, 156), rgb(239, 239, 141));
-    width: 78vmin;
-    height: 90vmin;
-    border: 2px solid black;
-    display: grid;
-    grid-template-columns: repeat(18, 1fr);
-    grid-template-rows: repeat(18, 1fr);
+  background: linear-gradient(rgb(156, 244, 156), rgb(239, 239, 141));
+  width: 78vmin;
+  height: 90vmin;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(18, 1fr);
 }
 
 .head {
-    background: linear-gradient(red, yellow);
-    border: 2px solid grey;
-    transform: scale(1.02);
-    border-radius: 9px;
+  background: linear-gradient(red, yellow);
+  border: 2px solid grey;
+  transform: scale(1.02);
+  border-radius: 9px;
 }
 
 .food {
-    background: linear-gradient(red, blue);
-    border-radius: 12px;
+  background: linear-gradient(red, blue);
+  border-radius: 12px;
 }
 
 .snake {
-    background-color: red;
-    border: 0.25vmin solid white;
-    border-radius: 12px;
+  background-color: red;
+  border: 0.25vmin solid white;
+  border-radius: 12px;
 }
 
 #current-score {
-    position: absolute;
-    top: 9px;
-    right: 143px;
-    font-size: 39px;
-    font-family: Georgia, serif;
+  position: absolute;
+  top: 9px;
+  right: 143px;
+  font-size: 39px;
+  font-family: Georgia, serif;
 }
 
 #high-score {
-    position: absolute;
-    top: 52px;
-    right: 86px;
-    font-size: 39px;
-    font-family: Georgia, serif;
+  position: absolute;
+  top: 52px;
+  right: 86px;
+  font-size: 39px;
+  font-family: Georgia, serif;
 }
 
 #reset-button {
-    position: absolute;
-    top: 140px;
-    right: 162px;
-    font-size: 39px;
-    font-family: Georgia, serif;
-    border-radius: 12px;
-    background-color: lightgoldenrodyellow;
+  position: absolute;
+  top: 140px;
+  right: 162px;
+  font-size: 39px;
+  font-family: Georgia, serif;
+  border-radius: 12px;
+  background-color: lightgoldenrodyellow;
+}
+
+@media (width<1211px) {
+  #game-board {
+    margin-right: 577px;
+    height: 33rem;
+    width: 31rem;
+  }
+  .game-container {
+    background-size: 80vw 100vh;
+  }
+
+  #reset-button,
+  #current-score,
+  #high-score {
+    right: 311px;
+  }
+}
+
+@media (width<1080px) {
+  #game-board {
+    margin-right: 449px;
+    height: 33rem;
+    width: 24rem;
+  }
+  .game-container {
+    background-size: 80vw 100vh;
+  }
+}
+@media (width<839px) {
+  #game-board {
+    margin-right: 140px;
+    height: 25rem;
+    width: 18rem;
+  }
+  .game-container {
+    background-size: 100vw 100vh;
+  }
+  #reset-button {
+    margin-top: -41px;
+    margin-right: 109px;
+  }
+  #current-score,
+  #high-score {
+    margin-right: 109px;
+  }
+}
+@media (width<650px) {
+  #game-board {
+    margin-right: 27px;
+    height: 25rem;
+    width: 18rem;
+  }
+  .game-container {
+    background-size: 100vw 100vh;
+  }
+  #reset-button {
+    margin-top: -41px;
+    margin-right: -32px;
+    font-size: 35px;
+  }
+  #current-score,
+  #high-score {
+    margin-right: -32px;
+    font-size: 32px;
+  }
+}
+@media (width<465px) {
+  #game-board {
+    margin-right: 27px;
+    height: 25rem;
+    width: 18rem;
+  }
+  .game-container {
+    background-size: 112vw 100vh;
+  }
+  #reset-button {
+    margin-top: -40px;
+    margin-right: -129px;
+    font-size: 23px;
+  }
+  #current-score,
+  #high-score {
+    margin-right: -182px;
+    font-size: 32px;
+    margin-top: -1px;
+  }
+}
+
+.arrow {
+  display: grid;
+  grid-template-columns: 30px 30px 30px; /* Create 3 columns for left, center, and right */
+  grid-template-rows: 60px 60px; /* 2 rows: 1 for the up button and 1 for left, down, and right */
+  gap: 10px; /* Space between buttons */
+  position: absolute; /* Position it at the bottom */
+  bottom: 80px; /* 20px from the bottom of the page */
+  left: 50%;
+  transform: translateX(-50%); /* Center the container horizontally */
+  display: none;
+}
+
+.arrow button {
+  background-color: transparent;
+  border: none;
+  font-size: 40px; /* Icon size */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-down,
+.arrow-right {
+  margin-top: 101px;
+}
+.arrow-up {
+  margin-left: 103px;
+  background-color: blue;
+  margin-left: 56px;
+  margin-top: 63px;
+}
+
+@media (width<431px) {
+  .arrow {
+    display: grid;
+  }
+}
+
+@media (height=740px) {
+  .arrow {
+    bottom: 70px;
+  }
+}
+@media (height<668px) {
+  .arrow {
+    bottom: 20px;
+  }
 }

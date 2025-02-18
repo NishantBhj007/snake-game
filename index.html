@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="./image-assets/favIcon.png">
-  <title>Snake Game</title>
-</head>
-<body>
-  <div class="game-container">
-    <div id="current-score" class="score-box">Score: 0</div>
-    <div id="high-score" class="score-box">High Score: 0</div>
-    <div id="game-board" class="game-board"></div>
-    <button id="reset-button" class="game-button">Reset</button>
-  </div>
-</body>
-<script type="module" src="index.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="./image-assets/favIcon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <title>Snake Game</title>
+  </head>
+  <body>
+    <div class="game-container">
+      <div id="current-score" class="score-box">Score: 0</div>
+      <div id="high-score" class="score-box">High Score: 0</div>
+      <div id="game-board" class="game-board"></div>
+      <button id="reset-button" class="game-button">Reset</button>
+
+      <div class="arrow">
+        <button class="arrow-up">
+          <span class="material-symbols-outlined">arrow_upward</span>
+        </button>
+        <button class="arrow-down">
+          <span class="material-symbols-outlined">arrow_downward</span>
+        </button>
+        <button class="arrow-right">
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+        <button class="arrow-left">
+          <span class="material-symbols-outlined">arrow_back</span>
+        </button>
+      </div>
+    </div>
+  </body>
+  <script type="module" src="index.js"></script>
 </html>
